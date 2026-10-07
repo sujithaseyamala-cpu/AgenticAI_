@@ -1,0 +1,45 @@
+{
+  "tools": [
+    {
+      "function_declarations": [
+        {
+          "name": "calculate_expression",
+          "description": "Evaluates a complete mathematical arithmetic expression with proper operator precedence and parentheses. Supports +, -, *, /, // (floor div), % (modulo), ** (power).",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "expression": {
+                "type": "string",
+                "description": "The arithmetic expression to evaluate (e.g., '145 * 12 + (300 / 5)', '2 ** 10', '95 % 4')."
+              }
+            },
+            "required": ["expression"]
+          }
+        },
+        {
+          "name": "basic_arithmetic",
+          "description": "Performs a single discrete arithmetic operation between two numbers.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "operation": {
+                "type": "string",
+                "enum": ["add", "subtract", "multiply", "divide", "modulo", "power"],
+                "description": "The arithmetic operation to perform."
+              },
+              "a": {
+                "type": "number",
+                "description": "The first number (or base in power operation)."
+              },
+              "b": {
+                "type": "number",
+                "description": "The second number (or exponent in power operation)."
+              }
+            },
+            "required": ["operation", "a", "b"]
+          }
+        }
+      ]
+    }
+  ]
+}
